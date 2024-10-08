@@ -73,9 +73,15 @@ Part 4: Extra not required 🌶️🌶️🌶️
  ************************************/
 
 const array = [2, 4, 6, 8];
-array.forEach((number) => {
-  console.log(number);
-});
+
+function logger(array) {
+  array.forEach((number) => {
+    console.log(number);
+  });
+}
+
+// To check our work
+logger(array);
 
 /*************************************
  * toCelsius(temperatures)
@@ -89,11 +95,19 @@ array.forEach((number) => {
  *   C = (F - 32) * (5/9)
  ************************************/
 
+
 const temperatures = [90, 100, 110, 120];
-const toCelcius = temperatures.map(
-  (temperature) => (temperature - 32) * (5 / 9)
-);
-console.log(toCelcius);
+
+function toCelcius(temperatures) {
+  const tempsInCelcius = temperatures.map(
+    (temperature) => (temperature - 32) * (5 / 9)
+  );
+  return tempsInCelcius;
+}
+
+// To check our work
+console.log(toCelcius(temperatures));
+
 
 /**************************************
  * hottestDays(temperatures, threshhold)
@@ -104,11 +118,19 @@ console.log(toCelcius);
  *   that exceed the threshhold
  ***************************************/
 
-const threshholdTemp = 100;
-const hottestDays = temperatures.filter(
-  (temperature) => temperature > threshholdTemp
-);
-console.log(hottestDays);
+
+const threshhold = 100;
+
+function hottestDays(temperatures, threshhold) {
+  const tempsExceededThreshhold = temperatures.filter(
+    (temperature) => temperature > threshhold
+  );
+  return tempsExceededThreshhold;
+}
+
+// To check our work
+console.log(hottestDays(temperatures, threshhold));
+
 
 /******************************************
  * logHottestDays(temperatures, threshhold)
@@ -125,7 +147,13 @@ console.log(hottestDays);
  *       all previous functions
  *******************************************/
 
-const logHottestDays = temperatures
-  .filter((temperature) => temperature > threshholdTemp)
-  .map((temperature) => (temperature - 32) * (5 / 9));
-console.log(logHottestDays);
+
+function logHottestDays(temperatures, threshhold) {
+    temperatures
+      .filter((temperature) => temperature > threshhold)
+      .map((temperature) => (temperature - 32) * (5 / 9))
+      .forEach((temperature) => console.log(temperature));
+  }
+
+// To check our work
+logHottestDays(temperatures, threshhold);
