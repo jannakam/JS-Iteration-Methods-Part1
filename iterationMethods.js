@@ -11,7 +11,7 @@ Write code to perform the following tasks using the filter method:
 ******************************************************************/
 
 // 1
-const greaterThanOrEqualTo25 = numbers.filter((number)=> number >= 25);
+const greaterThanOrEqualTo25 = numbers.filter((number) => number >= 25);
 
 // 2
 const isDivisibleBy5 = numbers.filter((number) => number % 5 === 0);
@@ -19,7 +19,6 @@ const isDivisibleBy5 = numbers.filter((number) => number % 5 === 0);
 // To check our work
 console.log(greaterThanOrEqualTo25);
 console.log(isDivisibleBy5);
-
 
 /*****************************************************************
 Part 2: Mapping
@@ -50,15 +49,18 @@ Combine the filter and map methods to perform the following tasks:
 ******************************************************************/
 
 //5
-const greaterThanOrEqualTo20Squared = numbers.filter((number) => (number >= 20)).map((number) => number * number);
+const greaterThanOrEqualTo20Squared = numbers
+  .filter((number) => number >= 20)
+  .map((number) => number * number);
 
-// 6 
-const isDivisibleBy5MultipliedBy3 = numbers.filter((number) => number % 5 === 0).map((number) => number * 3);
+// 6
+const isDivisibleBy5MultipliedBy3 = numbers
+  .filter((number) => number % 5 === 0)
+  .map((number) => number * 3);
 
 // To check our work
 console.log(greaterThanOrEqualTo20Squared);
 console.log(isDivisibleBy5MultipliedBy3);
-
 
 /*****************************************************************
 Part 4: Extra not required 🌶️🌶️🌶️
@@ -70,12 +72,10 @@ Part 4: Extra not required 🌶️🌶️🌶️
  * - Logs every element of the array
  ************************************/
 
-
-array = [2, 4, 6, 8]
-array.forEach(number => {
-    console.log(number)
+const array = [2, 4, 6, 8];
+array.forEach((number) => {
+  console.log(number);
 });
-
 
 /*************************************
  * toCelsius(temperatures)
@@ -89,11 +89,11 @@ array.forEach(number => {
  *   C = (F - 32) * (5/9)
  ************************************/
 
-
-temperatures = [90, 100, 110, 120]
-toCelcius = temperatures.map((temperature) => (temperature - 32) * (5/9));
+const temperatures = [90, 100, 110, 120];
+const toCelcius = temperatures.map(
+  (temperature) => (temperature - 32) * (5 / 9)
+);
 console.log(toCelcius);
-
 
 /**************************************
  * hottestDays(temperatures, threshhold)
@@ -104,12 +104,11 @@ console.log(toCelcius);
  *   that exceed the threshhold
  ***************************************/
 
-
-temperatures = [90, 100, 110, 120];
-threshholdTemp = 100;
-hottestDays = temperatures.filter((temperature) => temperature > threshholdTemp);
+const threshholdTemp = 100;
+const hottestDays = temperatures.filter(
+  (temperature) => temperature > threshholdTemp
+);
 console.log(hottestDays);
-
 
 /******************************************
  * logHottestDays(temperatures, threshhold)
@@ -126,9 +125,7 @@ console.log(hottestDays);
  *       all previous functions
  *******************************************/
 
-
-temperatures = [90, 100, 110, 120];
-threshholdTemp = 95;
-logHottestDays = temperatures.filter((temperature) => temperature > threshholdTemp).map((temperature) => (temperature - 32) * (5/9));
+const logHottestDays = temperatures
+  .filter((temperature) => temperature > threshholdTemp)
+  .map((temperature) => (temperature - 32) * (5 / 9));
 console.log(logHottestDays);
-
